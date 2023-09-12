@@ -72,6 +72,7 @@ class AuthController extends Controller
             'token' => $token
         ];
 
+
         return UserResource::make($user)->additional(['token' => $token]);
     }
 
