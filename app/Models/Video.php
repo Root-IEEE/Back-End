@@ -4,16 +4,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model 
+class Video extends Model
 {
 
     protected $table = 'videos';
     public $timestamps = true;
-    protected $fillable = array('video', 'title', 'description');
+    protected $fillable = array('video', 'user_id' ,'title', 'description');
 
-    public function admin()
+    public function user()
     {
-        return $this->belongsTo('App\Models\Admin', 'admin_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     public function exam()

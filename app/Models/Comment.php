@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model 
+class Comment extends Model
 {
 
     protected $table = 'comments';
     public $timestamps = true;
-    protected $fillable = array('video_id', 'user_id', 'admin_id', 'body');
+    protected $fillable = array('video_id', 'user_id', 'body');
 
     public function video()
     {
@@ -19,11 +19,6 @@ class Comment extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id');
-    }
-
-    public function admin()
-    {
-        return $this->belongsTo('App\Models\Admin', 'admin_id');
     }
 
 }

@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Exam extends Model 
+class Exam extends Model
 {
 
     protected $table = 'exams';
     public $timestamps = true;
-    protected $fillable = array('video_id', 'admin_id', 'title', 'notes');
+    protected $fillable = array('video_id', 'user_id', 'title', 'notes');
 
     public function video()
     {
@@ -26,9 +26,9 @@ class Exam extends Model
         return $this->hasMany('App\Models\Result');
     }
 
-    public function admin()
+    public function user()
     {
-        return $this->belongsTo('App\Models\Admin', 'admin_id');
+        return $this->belongsTo('App\Models\User', 'user_id');
     }
 
 }

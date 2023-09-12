@@ -2,14 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+use Laravel\Sanctum\HasApiTokens;
 
-class User extends Model 
+
+
+class User extends Authenticatable
 {
+    use HasRoles, HasApiTokens;
+
 
     protected $table = 'users';
     public $timestamps = true;
-    protected $fillable = array('name', 'username', 'email', 'phone', 'father_phone', 'mother_phone', 'is_active', 'image');
+    protected $fillable = array('name','email', 'password' ,'phone', 'image');
     protected $hidden = array('password');
 
     public function comments()
