@@ -11,9 +11,9 @@ class CreateExamsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->integer('video_id');
-			$table->integer('admin_id')->unsigned();
+			$table->integer('user_id')->unsigned();
 			$table->string('title', 255);
-			$table->text('notes')->nullable();
+			$table->text('description')->nullable();
 		});
 	}
 

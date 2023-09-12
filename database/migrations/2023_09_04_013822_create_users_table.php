@@ -11,13 +11,9 @@ class CreateUsersTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->string('name', 255);
-			$table->string('username', 255);
 			$table->string('email', 255);
 			$table->string('password', 255);
-			$table->string('phone', 50);
-			$table->string('father_phone', 50)->nullable();
-			$table->string('mother_phone', 50)->nullable();
-			$table->boolean('is_active')->default(false);
+			$table->text('phone', 50)->nullable();
 			$table->text('image')->nullable();
 		});
 

@@ -12,7 +12,6 @@ class CreateCommentsTable extends Migration {
 			$table->timestamps();
 			$table->integer('video_id')->unsigned();
 			$table->integer('user_id')->unsigned();
-			$table->integer('admin_id')->unsigned();
 			$table->text('body');
 		});
 	}
