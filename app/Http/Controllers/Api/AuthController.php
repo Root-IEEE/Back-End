@@ -43,9 +43,7 @@ class AuthController extends Controller
             'token' => $token
         ];
 
-        return UserResource::make($user)->additional(['meta' => [
-            'key' => 'value',
-        ]]);
+        return UserResource::make($user)->additional(['token' => $token]);
     }
 
 
@@ -76,6 +74,7 @@ class AuthController extends Controller
 
         return UserResource::make($user)->additional(['token' => $token]);
     }
+
 
 
     public function logout (Request $request) {
