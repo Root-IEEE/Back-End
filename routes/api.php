@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\ExamController;
 use App\Http\Controllers\Api\VideoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -19,6 +20,8 @@ Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
 Route::get('/videos', [VideoController::class,'index']);
 Route::get('/videos/{id}', [VideoController::class,'show']);
+Route::get('/exams', [ExamController::class,'index']);
+
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
