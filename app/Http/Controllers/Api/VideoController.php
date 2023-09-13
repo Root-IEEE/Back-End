@@ -19,11 +19,8 @@ class VideoController extends Controller
    */
   public function index()
   {
-//      $videos= Video::all();
-//      return VideoResource::make($videos);
+
       $videos = Video::all();
-//      $d = VideoResource::collection($videos);
-//      dd($d);
       return VideoResource::collection($videos);
   }
 
@@ -55,7 +52,13 @@ class VideoController extends Controller
    */
   public function show($id)
   {
+      $video = Video::find($id);
 
+      if (!$video) {
+          return response()->json(['message' => 'Video not found'], 404);
+      }
+
+      return new VideoResource($video);
   }
 
   /**
