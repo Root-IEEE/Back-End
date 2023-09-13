@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
 Route::get('/videos', [VideoController::class,'index']);
+Route::get('/videos/{id}', [VideoController::class,'show']);
 
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
