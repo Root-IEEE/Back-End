@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Resources\ExamResource;
+use App\Models\Exam;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
+
 
 class ExamController extends Controller
 {
@@ -15,6 +19,8 @@ class ExamController extends Controller
    */
   public function index()
   {
+      $exams = Exam::all();
+      return ExamResource::collection($exams);
 
   }
 
