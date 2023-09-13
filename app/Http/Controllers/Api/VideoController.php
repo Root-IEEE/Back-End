@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Resources\VideoResource;
+use App\Models\Video;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Response;
 
 
 class VideoController extends Controller
@@ -16,7 +19,12 @@ class VideoController extends Controller
    */
   public function index()
   {
-
+//      $videos= Video::all();
+//      return VideoResource::make($videos);
+      $videos = Video::all();
+//      $d = VideoResource::collection($videos);
+//      dd($d);
+      return VideoResource::collection($videos);
   }
 
   /**

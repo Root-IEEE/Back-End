@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Database\Eloquent\Model;
 
-class Video extends Model
+class Video extends Authenticatable
 {
+    use HasRoles;
 
     protected $table = 'videos';
     public $timestamps = true;
