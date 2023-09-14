@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-
-class Question extends Model 
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\Permission\Traits\HasRoles;
+class Question extends Authenticatable
 {
+    use HasRoles;
 
     protected $table = 'questions';
     public $timestamps = true;

@@ -21,6 +21,7 @@ Route::post('/login', [AuthController::class,'login']);
 Route::get('/videos', [VideoController::class,'index']);
 Route::get('/videos/{id}', [VideoController::class,'show']);
 Route::get('/exams', [ExamController::class,'index']);
+Route::get('/exams/{id}', [ExamController::class,'show']);
 
 
 
