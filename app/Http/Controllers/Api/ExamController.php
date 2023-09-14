@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Resources\QuestionResource;
 use App\Http\Resources\ExamResource;
 use App\Models\Exam;
+use App\Models\Question;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Response;
@@ -31,7 +33,6 @@ class ExamController extends Controller
    */
   public function create()
   {
-
   }
 
   /**
@@ -52,7 +53,16 @@ class ExamController extends Controller
    */
   public function show($id)
   {
+      $exam = Exam::with('questions')->find($id);
+      if (!$exam) {
+          return response()->json(['message' => 'Exam not found'], 404);
+      }
+      $examResource = new ExamResource($exam);
+      $response = [
+          'exam' => $examResource,
+      ];
 
+      return response()->json($response);
   }
 
   /**

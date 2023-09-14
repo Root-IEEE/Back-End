@@ -11,7 +11,7 @@ class CreateOptionsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->integer('question_id')->unsigned();
-			$table->text('potion');
+			$table->text('body');
 			$table->boolean('status')->default(false);
 		});
 	}
