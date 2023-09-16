@@ -11,11 +11,11 @@ class Exam extends Authenticatable
 
     protected $table = 'exams';
     public $timestamps = true;
-    protected $fillable = array('video_id', 'user_id', 'title', 'notes');
+    protected $fillable = ['video_id', 'user_id', 'title', 'description'];
 
     public function video()
     {
-        return $this->hasOne('App\Models\Video', 'video_id');
+        return $this->belongsTo(Video::class);
     }
 
     public function questions()

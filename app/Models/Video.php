@@ -3,15 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\Permission\Traits\HasRoles;
 
 class Video extends Authenticatable
 {
     use HasRoles;
 
-    protected $table = 'videos';
-    public $timestamps = true;
-    protected $fillable = array('video', 'user_id' ,'title', 'description');
+    protected $fillable = ['video', 'user_id' ,'title', 'description'];
 
     public function user()
     {
