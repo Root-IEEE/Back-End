@@ -35,6 +35,9 @@ class ResultController extends Controller
    */
   public function store(Request $request)
   {
+      // TODO: Done we are returning the exam with the question with every option.
+      // TODO: Client will send a request contains exam id + every question id + the chosen answer id
+
 
   }
 

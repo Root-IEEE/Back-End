@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Dashboard;
+namespace App\Http\Controllers\Api\Dashboard;
 
 use Illuminate\Support\Facades\Response;
 use App\Models\Admin;
 use Illuminate\Http\Request;
 use \Spatie\Permission\Models\Role;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Api\Controller;
 use Illuminate\Support\Facades\Artisan;
 use Spatie\Permission\Models\Permission;
 
