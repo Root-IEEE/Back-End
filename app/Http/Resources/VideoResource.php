@@ -17,10 +17,12 @@ class VideoResource extends JsonResource
         return [
             'id' => $this->id,
             'video' => $this->video,
+            'thumbnail'=>$this->thumbnail,
             'title' => $this->title,
             'description' => $this->description,
             'user_id' => $this->user_id,
             'roles' => RoleResource::collection($this->user->roles),
+            'comments'=>CommentResource::collection($this->comments),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];       }
