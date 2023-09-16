@@ -16,9 +16,9 @@ class OptionResource extends JsonResource
     {
        return [
            'id' => $this->id,
+           'question_id' => $this->question_id,
            'option' => $this->body,
            'correct' => $this->status,
-
            ];
 
     }

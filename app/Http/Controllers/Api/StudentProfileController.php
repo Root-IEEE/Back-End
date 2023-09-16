@@ -76,8 +76,38 @@ class StudentProfileController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update($id)
+    public function update(Request $request)
     {
+//        $user = $request->user();
+//
+//        // Validate the incoming request data
+//        $validatedData = $request->validate([
+//            'name' => 'string|max:255',
+//            'phone' => 'string|min:8|max:11',
+//            'email' => 'email|max:255|unique:users,email,' . $user->id,
+//            'image' => 'image',
+//            'father_phone' => 'string',
+//            'mother_phone' => 'string',
+//            'class_name' => 'string', ]);
+//
+//        $updatedData = [
+//
+//            $user->update([
+//            'name' => $validatedData['name'],
+//            'phone' => $validatedData['phone'],
+//            'email' => $validatedData['email'],
+//        ])
+//
+//        ];
+//        $us = [
+//            $user->studentDetail->update([
+//            'father_phone' => $validatedData['father_phone'],
+//            'mother_phone' => $validatedData['mother_phone'],
+//            'class_name' => $validatedData['class_name'],
+//        ])
+//        ];
+//
+//        $update= array_merge($updatedData)
 
     }
 

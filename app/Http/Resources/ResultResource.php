@@ -17,6 +17,7 @@ class ResultResource extends JsonResource
         return [
             'max_score' => $this->max_score,
             'total_score' => $this->total_score,
+            'exam' => ExamResource::make($this->exam)
         ];
     }
 }

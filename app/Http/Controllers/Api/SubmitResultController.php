@@ -7,6 +7,7 @@ use App\Http\Requests\SubmitResultRequest;
 use App\Http\Resources\ResultResource;
 use App\Models\Exam;
 use App\Models\Result;
+use App\Models\User;
 
 
 class SubmitResultController extends Controller
@@ -14,6 +15,7 @@ class SubmitResultController extends Controller
     public function __invoke(SubmitResultRequest $request)
     {
         $exam = Exam::find($request->input('exam_id'));
+        $user = User::find($request->input('user_id'));
         $questions= $exam->questions;
         $counter = 0;
 
@@ -26,6 +28,10 @@ class SubmitResultController extends Controller
             if($matching_option->status == 1){
                 $counter++ ;
             }
+            $user->options()->syncWithPivotValues([$matching_option->id], [
+               'exam_id' => $exam->id,
+               'question_id' => $question_id,
+            ], false);
         }
         $total_score=$counter;
         $max_score= $exam->questions()->count();
