@@ -25,11 +25,16 @@ class User extends Authenticatable
 
     public function results()
     {
-        return $this->hasMany('App\Models\User');
+        return $this->hasMany(Result::class);
     }
     public function studentDetail()
     {
         return $this->hasOne('App\Models\StudentDetail', 'user_id');
+    }
+
+    public function options()
+    {
+        return $this->belongsToMany(Option::class);
     }
 
 }

@@ -4,6 +4,8 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ExamController;
 use App\Http\Controllers\Api\ExamResultsController;
+use App\Http\Controllers\Api\ResultController;
+use App\Http\Controllers\Api\ShowCorrectExamOptionsController;
 use App\Http\Controllers\Api\StudentDetailsController;
 use App\Http\Controllers\Api\StudentProfileController;
 use App\Http\Controllers\Api\SubmitResultController;
@@ -31,7 +33,9 @@ Route::group (['middleware' => ['auth:sanctum']], function(){
     Route::get('/videos/{id}', [VideoController::class,'show']);
     Route::get('/exams', [ExamController::class,'index']);
     Route::get('/exams/{id}', [ExamController::class,'show']);
+    Route::get('/exams/{exam}/users/{user}/result', ShowCorrectExamOptionsController::class);
     Route::post('/results', SubmitResultController::class);
+    Route::get('/results/{user}', [ResultController::class, 'index']);
     Route::post('/student-details', [StudentDetailsController::class, 'store'])->middleware('student');
     Route::get('/student-profile', [StudentProfileController::class, 'index']);
 });

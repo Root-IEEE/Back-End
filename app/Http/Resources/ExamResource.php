@@ -21,8 +21,6 @@ class ExamResource extends JsonResource
             'user_id' => UserResource::make($this->user),
             'video_id'=> $this->video_id,
             'questions'=>QuestionResource::collection($this->questions)
-
-
         ];
     }
 }
