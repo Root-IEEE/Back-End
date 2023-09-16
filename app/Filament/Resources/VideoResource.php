@@ -74,4 +74,6 @@ class VideoResource extends Resource
             'edit' => Pages\EditVideo::route('/{record}/edit'),
         ];
     }
+
+
 }
