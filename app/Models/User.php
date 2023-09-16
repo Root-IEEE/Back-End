@@ -27,5 +27,9 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\User');
     }
+    public function studentDetail()
+    {
+        return $this->hasOne('App\Models\StudentDetail', 'user_id');
+    }
 
 }

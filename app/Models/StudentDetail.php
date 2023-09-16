@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class StudentsDetail extends Model
+class StudentDetail extends Model
 {
     protected $table = 'students_details';
     public $timestamps = true;
