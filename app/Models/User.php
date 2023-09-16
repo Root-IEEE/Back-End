@@ -2,13 +2,14 @@
 
 namespace App\Models;
 
+use Filament\Models\Contracts\FilamentUser;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Sanctum\HasApiTokens;
 
 
 
-class User extends Authenticatable
+class User extends Authenticatable implements FilamentUser
 {
     use HasRoles, HasApiTokens;
 
@@ -27,5 +28,11 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\User');
     }
+
+    public function canAccessFilament(): bool
+    {
+        return $this->hasRole(['teacher_assistant', 'teacher', 'admin']);
+    }
+
 
 }
