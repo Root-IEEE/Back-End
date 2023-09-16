@@ -8,9 +8,9 @@ class CreateVideosTable extends Migration {
 	public function up()
 	{
 		Schema::create('videos', function(Blueprint $table) {
-			$table->increments('id');
+			$table->id('id');
 			$table->timestamps();
-			$table->integer('user_id')->unsigned();
+			$table->foreignId('user_id')->constrained()->cascadeOnDelete();
 			$table->text('video');
 			$table->string('title', 255);
 			$table->text('description')->nullable();

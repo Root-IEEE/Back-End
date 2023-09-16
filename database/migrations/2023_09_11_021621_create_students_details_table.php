@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('father_phone');
             $table->string('mother_phone');
             $table->string('class_name');
-            $table->integer('user_id')->unsigned();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }
