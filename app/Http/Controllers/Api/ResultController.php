@@ -2,20 +2,18 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Resources\ResultResource;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ResultController extends Controller
 {
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
-  public function index()
+  public function index(User $user): AnonymousResourceCollection
   {
-
+      return ResultResource::collection($user->results);
   }
 
   /**
@@ -35,6 +33,9 @@ class ResultController extends Controller
    */
   public function store(Request $request)
   {
+      // TODO: Done we are returning the exam with the question with every option.
+      // TODO: Client will send a request contains exam id + every question id + the chosen answer id
+
 
   }
 

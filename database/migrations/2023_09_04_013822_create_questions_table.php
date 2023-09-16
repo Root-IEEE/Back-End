@@ -8,9 +8,9 @@ class CreateQuestionsTable extends Migration {
 	public function up()
 	{
 		Schema::create('questions', function(Blueprint $table) {
-			$table->increments('id');
+			$table->id('id');
 			$table->timestamps();
-			$table->integer('exam_id')->unsigned();
+			$table->foreignId('exam_id')->constrained()->cascadeOnDelete();
 			$table->text('question');
 		});
 	}

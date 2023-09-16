@@ -8,12 +8,12 @@ class CreateExamsTable extends Migration {
 	public function up()
 	{
 		Schema::create('exams', function(Blueprint $table) {
-			$table->increments('id');
-			$table->timestamps();
-			$table->integer('video_id');
-			$table->integer('user_id')->unsigned();
+			$table->id('id');
+            $table->foreignId('video_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained()->cascadeOnDelete();
 			$table->string('title', 255);
 			$table->text('description')->nullable();
+            $table->timestamps();
 		});
 	}
 

@@ -1,7 +1,14 @@
 <?php
 
+
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ExamController;
+use App\Http\Controllers\Api\ExamResultsController;
+use App\Http\Controllers\Api\ResultController;
+use App\Http\Controllers\Api\ShowCorrectExamOptionsController;
+use App\Http\Controllers\Api\StudentDetailsController;
+use App\Http\Controllers\Api\StudentProfileController;
+use App\Http\Controllers\Api\SubmitResultController;
 use App\Http\Controllers\Api\VideoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,25 +23,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
-Route::get('/videos', [VideoController::class,'index']);
-Route::get('/videos/{id}', [VideoController::class,'show']);
-Route::get('/exams', [ExamController::class,'index']);
-Route::get('/exams/{id}', [ExamController::class,'show']);
 
-
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group (['middleware' => ['auth:sanctum']], function(){
+    Route::get('/videos', [VideoController::class,'index']);
+    Route::get('/videos/{id}', [VideoController::class,'show']);
+    Route::get('/exams', [ExamController::class,'index']);
+    Route::get('/exams/{id}', [ExamController::class,'show']);
+    Route::get('/exams/{exam}/users/{user}/result', ShowCorrectExamOptionsController::class);
+    Route::post('/results', SubmitResultController::class);
+    Route::get('/results/{user}', [ResultController::class, 'index']);
+    Route::post('/student-details', [StudentDetailsController::class, 'store'])->middleware('student');
+    Route::get('/student-profile', [StudentProfileController::class, 'index']);
 });
-
-Route::resources([
-    'comment' => 'CommentController',
-    'exam' => 'ExamController',
-    'option' => 'OptionController',
-    'question' => 'QuestionController',
-    'result' => 'ResultController',
-    'video' => 'VideoController',
-    'user' => 'UserController'
-    ]);

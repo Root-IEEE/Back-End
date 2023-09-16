@@ -8,12 +8,12 @@ class CreateResultsTable extends Migration {
 	public function up()
 	{
 		Schema::create('results', function(Blueprint $table) {
-			$table->increments('id');
+			$table->id('id');
 			$table->timestamps();
-			$table->integer('user_id')->unsigned();
-			$table->integer('exam_id')->unsigned();
-			$table->integer('question_id')->unsigned();
-			$table->integer('option_id')->unsigned();
+			$table->foreignId('user_id')->constrained()->cascadeOnDelete();
+            $table->foreignId('exam_id')->constrained()->cascadeOnDelete();
+            $table->integer('max_score')->unsigned();
+			$table->integer('total_score')->unsigned();
 		});
 	}
 

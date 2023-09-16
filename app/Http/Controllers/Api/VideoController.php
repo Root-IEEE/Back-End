@@ -12,11 +12,6 @@ use Illuminate\Http\Response;
 class VideoController extends Controller
 {
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
   public function index()
   {
       $videos = Video::all();
@@ -43,20 +38,9 @@ class VideoController extends Controller
 
   }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function show($id)
+
+  public function show(Video $video): VideoResource
   {
-      $video = Video::find($id);
-
-      if (!$video) {
-          return response()->json(['message' => 'Video not found'], 404);
-      }
-
       return new VideoResource($video);
   }
 
