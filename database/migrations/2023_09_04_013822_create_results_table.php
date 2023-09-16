@@ -11,9 +11,9 @@ class CreateResultsTable extends Migration {
 			$table->increments('id');
 			$table->timestamps();
 			$table->integer('user_id')->unsigned();
-			$table->integer('exam_id')->unsigned();
-			$table->integer('question_id')->unsigned();
-			$table->integer('option_id')->unsigned();
+            $table->integer('exam_id')->unsigned();
+            $table->integer('max_score')->unsigned();
+			$table->integer('total_score')->unsigned();
 		});
 	}
 
