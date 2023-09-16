@@ -1,7 +1,9 @@
 <?php
 
+
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\ExamController;
+use App\Http\Controllers\Api\SubmitResultController;
 use App\Http\Controllers\Api\VideoController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -16,25 +18,16 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+
 Route::post('/register', [AuthController::class,'register']);
 Route::post('/login', [AuthController::class,'login']);
-Route::get('/videos', [VideoController::class,'index']);
-Route::get('/videos/{id}', [VideoController::class,'show']);
-Route::get('/exams', [ExamController::class,'index']);
-Route::get('/exams/{id}', [ExamController::class,'show']);
 
+Route::group (['middleware' => ['auth:sanctum']], function(){
+    Route::get('/videos', [VideoController::class,'index']);
+    Route::get('/videos/{id}', [VideoController::class,'show']);
+    Route::get('/exams', [ExamController::class,'index']);
+    Route::get('/exams/{id}', [ExamController::class,'show']);
+    Route::post('/results', SubmitResultController::class);
 
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
 });
-
-Route::resources([
-    'comment' => 'CommentController',
-    'exam' => 'ExamController',
-    'option' => 'OptionController',
-    'question' => 'QuestionController',
-    'result' => 'ResultController',
-    'video' => 'VideoController',
-    'user' => 'UserController'
-    ]);
