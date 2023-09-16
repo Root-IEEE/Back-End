@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -70,12 +71,7 @@ class StudentProfileController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  int  $id
-     * @return Response
-     */
+
     public function update(Request $request)
     {
 //        $user = $request->user();
@@ -85,30 +81,13 @@ class StudentProfileController extends Controller
 //            'name' => 'string|max:255',
 //            'phone' => 'string|min:8|max:11',
 //            'email' => 'email|max:255|unique:users,email,' . $user->id,
-//            'image' => 'image',
-//            'father_phone' => 'string',
-//            'mother_phone' => 'string',
-//            'class_name' => 'string', ]);
+//            // Add validation rules for other fields (image, father_phone, mother_phone, class_name, etc.)
+//        ]);
 //
-//        $updatedData = [
+//        // Update the user's profile attributes
+//        $user->update($validatedData);
 //
-//            $user->update([
-//            'name' => $validatedData['name'],
-//            'phone' => $validatedData['phone'],
-//            'email' => $validatedData['email'],
-//        ])
-//
-//        ];
-//        $us = [
-//            $user->studentDetail->update([
-//            'father_phone' => $validatedData['father_phone'],
-//            'mother_phone' => $validatedData['mother_phone'],
-//            'class_name' => $validatedData['class_name'],
-//        ])
-//        ];
-//
-//        $update= array_merge($updatedData)
-
+//        return response()->json(['message' => 'Profile updated successfully']);
     }
 
     /**
