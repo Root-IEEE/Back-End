@@ -44,5 +44,78 @@ class VideoSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('videos')->insert([
+            'user_id' => 5,
+            'video' => 'https://vimeo.com/518184774',
+            'title' => 'summer time',
+            'description' => 'short trip to Marsa Matrouh',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
     }
 }

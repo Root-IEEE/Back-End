@@ -33,6 +33,63 @@ class ExamSeeder extends Seeder
             'updated_at' => now(),
         ]);
 
+
+        DB::table('exams')->insert([
+            'user_id' => 4,
+            'video_id' => 3,
+            'title' => "exam 3",
+            'description' => 'MCQ test',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('exams')->insert([
+            'user_id' => 4,
+            'video_id' => 3,
+            'title' => "exam 3",
+            'description' => 'MCQ test',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('exams')->insert([
+            'user_id' => 4,
+            'video_id' => 3,
+            'title' => "exam 3",
+            'description' => 'MCQ test',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('exams')->insert([
+            'user_id' => 4,
+            'video_id' => 3,
+            'title' => "exam 3",
+            'description' => 'MCQ test',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('exams')->insert([
+            'user_id' => 4,
+            'video_id' => 3,
+            'title' => "exam 3",
+            'description' => 'MCQ test',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('exams')->insert([
+            'user_id' => 4,
+            'video_id' => 3,
+            'title' => "exam 3",
+            'description' => 'MCQ test',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('exams')->insert([
+            'user_id' => 4,
+            'video_id' => 3,
+            'title' => "exam 3",
+            'description' => 'MCQ test',
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
         DB::table('exams')->insert([
             'user_id' => 4,
             'video_id' => 3,
