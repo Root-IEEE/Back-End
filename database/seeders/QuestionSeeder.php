@@ -22,10 +22,46 @@ class QuestionSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('questions')->insert([
-        'exam_id' => 1,
-        'question' => "where do you live?",
-        'created_at' => now(),
-        'updated_at' => now(),
-    ]);
+            'exam_id' => 1,
+            'question' => "where do you live?",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('questions')->insert([
+            'exam_id' => 1,
+            'question' => "where do you live?",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('questions')->insert([
+            'exam_id' => 1,
+            'question' => "where do you live?",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('questions')->insert([
+            'exam_id' => 1,
+            'question' => "where do you live?",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('questions')->insert([
+            'exam_id' => 1,
+            'question' => "where do you live?",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('questions')->insert([
+            'exam_id' => 1,
+            'question' => "where do you live?",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+        DB::table('questions')->insert([
+            'exam_id' => 1,
+            'question' => "where do you live?",
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
     }
 }
